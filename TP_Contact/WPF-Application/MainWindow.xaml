@@ -12,15 +12,15 @@
             <RowDefinition Height="0*"/>
             <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
-        <Label Content="Nom Complet" HorizontalAlignment="Left" Height="36" Margin="10,31,0,0" VerticalAlignment="Top" Width="123"/>
-        <Label Content="Telephone" HorizontalAlignment="Left" Height="36" Margin="10,90,0,0" VerticalAlignment="Top" Width="123"/>
-        <Label Content="Adresse" HorizontalAlignment="Left" Height="36" Margin="10,145,0,0" VerticalAlignment="Top" Width="123"/>
+        <Label Content="Nom " HorizontalAlignment="Left" Height="36" Margin="10,31,0,0" VerticalAlignment="Top" Width="123"/>
+        <Label Content="Prenom" HorizontalAlignment="Left" Height="36" Margin="10,90,0,0" VerticalAlignment="Top" Width="123"/>
+        <Label Content="Telephone" HorizontalAlignment="Left" Height="36" Margin="10,145,0,0" VerticalAlignment="Top" Width="123"/>
         <TextBox HorizontalAlignment="Left" Height="25" Margin="138,35,0,0" TextWrapping="Wrap" Text="Votre Nom" VerticalAlignment="Top" Width="322"/>
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="138,90,0,0" TextWrapping="Wrap" Text="Votre Telephone" VerticalAlignment="Top" Width="322"/>
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="138,145,0,0" TextWrapping="Wrap" Text="Votre Adresse" VerticalAlignment="Top" Width="322"/>
-        <Button Content="UPDATE" HorizontalAlignment="Left" Height="58" Margin="111,230,0,0" VerticalAlignment="Top" Width="166"/>
-        <Button Content="DELETE" HorizontalAlignment="Left" Height="58" Margin="375,230,0,0" VerticalAlignment="Top" Width="166"/>
-        <Button Content="CREATE" HorizontalAlignment="Left" Height="62" Margin="235,334,0,0" VerticalAlignment="Top" Width="187"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="138,90,0,0" TextWrapping="Wrap" Text="Votre Prenom" VerticalAlignment="Top" Width="322"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="138,145,0,0" TextWrapping="Wrap" Text="Votre Telephone" VerticalAlignment="Top" Width="322"/>
+        <Button Content="UPDATE" HorizontalAlignment="Left" Height="58" Margin="111,230,0,0" VerticalAlignment="Top" Width="166" Click="Update_Click"/>
+        <Button Content="DELETE" HorizontalAlignment="Left" Height="58" Margin="375,230,0,0" VerticalAlignment="Top" Width="166" Click="Delete_Click"/>
+        <Button Content="CREATE" HorizontalAlignment="Left" Height="62" Margin="235,334,0,0" VerticalAlignment="Top" Width="187" Click="Create_Click"/>
 
     </Grid>
 </Window>

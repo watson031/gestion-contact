@@ -24,5 +24,19 @@ namespace WPF_Application
         {
             InitializeComponent();
         }
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Click");
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Click");
+        }
+
+        private void Create_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Click");
+        }
     }
 }

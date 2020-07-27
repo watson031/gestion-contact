@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Application"
         mc:Ignorable="d"
-        Title="Create" Height="450" Width="800">
-    <Grid>
-        <Label Content="Nom Complet" HorizontalAlignment="Left" Height="36" Margin="10,31,0,0" VerticalAlignment="Top" Width="123"/>
-        <Label Content="Telephone" HorizontalAlignment="Left" Height="36" Margin="10,90,0,0" VerticalAlignment="Top" Width="123"/>
-        <Label Content="Adresse" HorizontalAlignment="Left" Height="36" Margin="10,145,0,0" VerticalAlignment="Top" Width="123"/>
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="138,35,0,0" TextWrapping="Wrap" Text="Votre Nom" VerticalAlignment="Top" Width="322"/>
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="138,90,0,0" TextWrapping="Wrap" Text="Votre Telephone" VerticalAlignment="Top" Width="322"/>
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="138,145,0,0" TextWrapping="Wrap" Text="Votre Adresse" VerticalAlignment="Top" Width="322"/>
-        <Button Content="CREATE" HorizontalAlignment="Left" Height="74" Margin="57,232,0,0" VerticalAlignment="Top" Width="176"/>
-        <Button Content="CANCEL" HorizontalAlignment="Left" Height="74" Margin="340,232,0,0" VerticalAlignment="Top" Width="176"/>
+        Title="Create" Height="450" Width="797.969">
+    <Grid Margin="0,0,4,0">
+        <Label Content="Nom" HorizontalAlignment="Left" Height="36" Margin="116,38,0,0" VerticalAlignment="Top" Width="123"/>
+        <Label Content="Prenom" HorizontalAlignment="Left" Height="36" Margin="116,90,0,0" VerticalAlignment="Top" Width="123"/>
+        <Label Content="Telephone" HorizontalAlignment="Left" Height="36" Margin="116,141,0,0" VerticalAlignment="Top" Width="123"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="290,42,0,0" TextWrapping="Wrap" Text="Votre Nom" VerticalAlignment="Top" Width="322"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="290,90,0,0" TextWrapping="Wrap" Text="Votre Prenom" VerticalAlignment="Top" Width="322"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="290,145,0,0" TextWrapping="Wrap" Text="Votre Telephone" VerticalAlignment="Top" Width="322"/>
+        <Button Content="CREATE" HorizontalAlignment="Left" Height="74" Margin="139,250,0,0" VerticalAlignment="Top" Width="176" Click="Create_Click"/>
+        <Button Content="CANCEL" Height="74" Margin="435,250,175.2,0" VerticalAlignment="Top" Click="Cancel_Click"/>
 
     </Grid>
 </Window>

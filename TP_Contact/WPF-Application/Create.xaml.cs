@@ -23,5 +23,15 @@ namespace WPF_Application
         {
             InitializeComponent();
         }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Create_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
