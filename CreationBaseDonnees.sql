@@ -1,13 +1,13 @@
 USE master 
 GO
 
-DROP DATABASE IF EXISTS dbContacts
+DROP DATABASE IF EXISTS dbContact
 GO
  
-CREATE DATABASE dbContacts
+CREATE DATABASE dbContact
 GO
 
-USE dbContacts
+USE dbContact
 
 DROP Table IF EXISTS Utilisateurs 
 GO
