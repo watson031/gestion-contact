@@ -101,5 +101,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Contact_BLL\Contact_BLL.csproj">
+      <Project>{55011fea-c3a3-496e-94e2-3f88c4a20d72}</Project>
+      <Name>Contact_BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Contact_Model\Contact_Model.csproj">
+      <Project>{b8b6a0f8-b8f8-4832-865d-4a2ab90aa711}</Project>
+      <Name>Contact_Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
