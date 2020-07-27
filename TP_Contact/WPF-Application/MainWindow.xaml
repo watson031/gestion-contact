@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Label Content="Nom Complet" HorizontalAlignment="Left" Height="36" Margin="10,31,0,0" VerticalAlignment="Top" Width="123"/>
+        <Label Content="Telephone" HorizontalAlignment="Left" Height="36" Margin="10,90,0,0" VerticalAlignment="Top" Width="123"/>
+        <Label Content="Adresse" HorizontalAlignment="Left" Height="36" Margin="10,145,0,0" VerticalAlignment="Top" Width="123"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="138,35,0,0" TextWrapping="Wrap" Text="Votre Nom" VerticalAlignment="Top" Width="322"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="138,90,0,0" TextWrapping="Wrap" Text="Votre Telephone" VerticalAlignment="Top" Width="322"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="138,145,0,0" TextWrapping="Wrap" Text="Votre Adresse" VerticalAlignment="Top" Width="322"/>
+        <Button Content="UPDATE" HorizontalAlignment="Left" Height="58" Margin="79,275,0,0" VerticalAlignment="Top" Width="166"/>
+        <Button Content="DELETE" HorizontalAlignment="Left" Height="58" Margin="381,275,0,0" VerticalAlignment="Top" Width="166"/>
+
     </Grid>
 </Window>
