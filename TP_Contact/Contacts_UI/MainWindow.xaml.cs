@@ -24,19 +24,15 @@ namespace Contacts_UI
         {
             InitializeComponent();
         }
-        private void Update_Click(object sender, RoutedEventArgs e)
+
+        private void btnInscription_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Click");
+
         }
 
-        private void Delete_Click(object sender, RoutedEventArgs e)
+        private void btnConnection_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Click");
-        }
 
-        private void Create_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Click");
         }
     }
 }

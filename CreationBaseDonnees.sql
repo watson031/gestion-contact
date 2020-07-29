@@ -19,7 +19,7 @@ CREATE TABLE [dbo].[Utilisateurs]
 (
 	Id Int Not Null  identity (100,8) Primary Key Clustered,
 	[username] [varchar](25) NOT NULL Unique,
-	[password] [varchar](8) NOT NULL
+	[password] [varchar](15) NOT NULL
 )
 
 DROP Table IF EXISTS [Contacts] 

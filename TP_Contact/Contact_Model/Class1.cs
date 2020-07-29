@@ -8,7 +8,7 @@ namespace Contact_Model
 {
     public class Contacts
     {
-        public int Id { get;}
+        public int Id { get; set; }
         public int IdUsers { get; set; }
         public string Prenom { get; set; }
         public string Nom { get; set; }
