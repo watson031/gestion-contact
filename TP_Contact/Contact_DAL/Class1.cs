@@ -125,15 +125,15 @@ namespace Contact_DAL
         {
 
             Contacts userContact = new Contacts();
-            string connectionStr = connectionString;
-            using (SqlConnection conn = new SqlConnection(connectionStr))
+            
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"select id, prenom, nom, telephone, courriel
-                        from Contacts where Id_utilisateurs = @id";
-                    cmd.Parameters.Add(new SqlParameter("Id_utilisateurs", id));
+                        from Contacts where id = @id";
+                    cmd.Parameters.Add(new SqlParameter("id", id));
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -167,6 +167,29 @@ namespace Contact_DAL
             }
             return userContact;
         }
+
+
+        public static void SupprimerUnContact(int id)
+        {
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"delete from Contacts where id = @id";
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+
+
+
+
+
 
 
     }
