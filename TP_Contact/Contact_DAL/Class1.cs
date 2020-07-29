@@ -185,6 +185,50 @@ namespace Contact_DAL
         }
 
 
+        public static List<Contacts> ShowAllContacts()
+        {
+
+            List<Contacts> contacts = new List<Contacts>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"select * from Contacts order by nom asc";
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Contacts userContacts = new Contacts();
+                            userContacts.Id = reader.GetInt32(0);
+                            userContacts.Prenom = reader.GetString(1);
+                            userContacts.Nom = reader.GetString(2);
+                            
+                            if (reader.GetValue(4) != DBNull.Value)
+                            {
+                                userContacts.Cellulaire = reader.GetString(4);
+                            }
+                            else
+                            {
+                                userContacts.Cellulaire = null;
+                            }
+                            if (reader.GetValue(5) != DBNull.Value)
+                            {
+                                userContacts.Courriel = reader.GetString(5);
+                            }
+                            else
+                            {
+                                userContacts.Courriel = null;
+                            }
+                            contacts.Add(userContacts);
+                        }
+                    }
+                }
+            }
+            return contacts;
+        }
+
 
 
 
