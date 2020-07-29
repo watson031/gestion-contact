@@ -92,7 +92,7 @@ namespace Contact_DAL
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
 
-                    cmd.CommandText = @"insert into Contacts(prenom,nom,cellulaire,courriel) values (@prenom,@nom,@cellulaire,@courriel)";
+                    cmd.CommandText = @"insert into Contacts(prenom,nom,telephone,courriel) values (@prenom,@nom,@cellulaire,@courriel)";
 
                     cmd.Parameters.AddWithValue("@prenom", prenom);
                     cmd.Parameters.AddWithValue("@nom", nom);
@@ -121,6 +121,52 @@ namespace Contact_DAL
             }
         }
 
+        public static Contacts RechercheId(int id)
+        {
+
+            Contacts userContact = new Contacts();
+            string connectionStr = connectionString;
+            using (SqlConnection conn = new SqlConnection(connectionStr))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"select id, prenom, nom, telephone, courriel
+                        from Contacts where Id_utilisateurs = @id";
+                    cmd.Parameters.Add(new SqlParameter("Id_utilisateurs", id));
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            userContact.Id = reader.GetInt32(0);
+                            userContact.Prenom = reader.GetString(1);
+                            userContact.Nom = reader.GetString(2);
+                           
+                            if (reader.GetValue(4) != DBNull.Value)
+                            {
+                                userContact.Cellulaire = reader.GetString(4);
+                            }
+                            else
+                            {
+                                userContact.Cellulaire = null;
+                            }
+                            if (reader.GetValue(5) != DBNull.Value)
+                            {
+                                userContact.Courriel = reader.GetString(5);
+                            }
+                            else
+                            {
+                                userContact.Courriel = null;
+                            }
+                           
+
+                        }
+                    }
+                }
+            }
+            return userContact;
+        }
 
 
     }
