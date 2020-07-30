@@ -8,8 +8,8 @@
         Background="LightGray"
          Title="Connexion" Height="450" Width="718.857">
     <Grid Margin="10,0,-6.2,0">
-        <Label x:Name="label" Content="Nom d'utilisateur" HorizontalAlignment="Left" Margin="185,166,0,0" VerticalAlignment="Top" Foreground="#FF404040" RenderTransformOrigin="1.225,2.218" Height="29" Width="133" FontFamily="Source Serif Pro Black" FontSize="14"/>
-        <Label x:Name="label1" FontSize="14" Content="Mot de passe" HorizontalAlignment="Left" Margin="212,214,0,0" VerticalAlignment="Top" Foreground="#FF404040" Width="106" FontFamily="Source Serif Pro Black"/>
+        <Label  Content="Nom d'utilisateur" HorizontalAlignment="Left" Margin="185,166,0,0" VerticalAlignment="Top" Foreground="#FF404040" RenderTransformOrigin="1.225,2.218" Height="29" Width="133" FontFamily="Source Serif Pro Black" FontSize="14"/>
+        <Label  FontSize="14" Content="Mot de passe" HorizontalAlignment="Left" Margin="212,214,0,0" VerticalAlignment="Top" Foreground="#FF404040" Width="106" FontFamily="Source Serif Pro Black"/>
         <TextBox x:Name="usernameTxtbox"  HorizontalAlignment="Left" Height="29" Margin="365,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271" BorderThickness="1" Background="White" RenderTransformOrigin="0.5,-0.162"/>
         <PasswordBox Height="29"  Margin="365,214,73,0" 
          Name="passwordTxtbox" VerticalAlignment="Top" 

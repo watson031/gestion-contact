@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Contact_DAL
 {
-    public class ServiceContacts
+    public class ServiceDb
     {
         static readonly string connectionString = @"Data Source=8Z0QFT2\SQLEXPRESS;Initial Catalog=dbContact;Integrated Security=True;Connect Timeout=5";
 

@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Contact_BLL;
+using Contact_Model;
+
 
 namespace Contacts_UI
 {
@@ -27,6 +30,15 @@ namespace Contacts_UI
 
         private void btnInscription_Click(object sender, RoutedEventArgs e)
         {
+
+            if (BLL.Login(this.usernameTxtbox.Text, this.passwordTxtbox.Password))
+            {
+                
+            }
+            else
+            {
+                
+            }
 
         }
 
