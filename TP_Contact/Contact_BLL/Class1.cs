@@ -20,5 +20,34 @@ namespace Contact_BLL
             ServiceDb.SignUp(username, password);
         }
 
+        public static void AjouterUnContact(String prenom, String nom, String cellulaire, String courriel)
+        {
+            ServiceDb.AjouterUnContact(prenom, nom, cellulaire, courriel);
+        }
+
+        public static Contacts RechercheParId(int id)
+        {
+            return ServiceDb.RechercheParId(id);
+        }
+
+        public static void SupprimerUnContact(int id)
+        {
+            ServiceDb.SupprimerUnContact(id);
+        }
+
+        public static List<Contacts> ShowAllContacts()
+        {
+            return ServiceDb.ShowAllContacts();
+        }
+
+        public static List<Contacts> RechercheParPrenom(string prenom)
+        {
+            return ServiceDb.RechercheParPrenom(prenom);
+        }
+
+        public static void ModifierUnContact(int id, string prenom, string nom, string cellulaire, string courriel)
+        {
+            ServiceDb.ModifierUnContact(id, prenom, nom, cellulaire, courriel);
+        }
     }
 }
