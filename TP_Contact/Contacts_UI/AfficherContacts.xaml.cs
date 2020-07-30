@@ -11,30 +11,37 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Contact_BLL;
 
 namespace Contacts_UI
 {
     /// <summary>
-    /// Interaction logic for Inscription.xaml
+    /// Interaction logic for AfficherContacts.xaml
     /// </summary>
-    public partial class Inscription : Window
+    public partial class AfficherContacts : Window
     {
-        public Inscription()
+        public AfficherContacts()
         {
             InitializeComponent();
         }
 
-        private void btnInscrire_Click(object sender, RoutedEventArgs e)
+        private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btnAnnuler_Click(object sender, RoutedEventArgs e)
+        private void btnModifier_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow fenetreConnexion = new MainWindow();
-            fenetreConnexion.Show();
-            Close();
+
+        }
+
+        private void btnSupprimer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

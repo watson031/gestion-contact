@@ -30,7 +30,9 @@ namespace Contacts_UI
 
         private void btnInscription_Click(object sender, RoutedEventArgs e)
         {
-
+            Inscription newUser = new Inscription();
+            newUser.Show();
+            this.Close();
 
         }
 
