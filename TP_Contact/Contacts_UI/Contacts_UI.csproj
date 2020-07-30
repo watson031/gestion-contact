@@ -59,6 +59,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AjouterContacts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Inscription.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -69,6 +73,9 @@
     </Page>
     <Compile Include="AfficherContacts.xaml.cs">
       <DependentUpon>AfficherContacts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AjouterContacts.xaml.cs">
+      <DependentUpon>AjouterContacts.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
