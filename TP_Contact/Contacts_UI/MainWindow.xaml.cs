@@ -31,6 +31,12 @@ namespace Contacts_UI
         private void btnInscription_Click(object sender, RoutedEventArgs e)
         {
 
+
+        }
+
+        private void btnConnection_Click(object sender, RoutedEventArgs e)
+        {
+
             if (BLL.Login(this.usernameTxtbox.Text, this.passwordTxtbox.Password))
             {
                 
@@ -39,11 +45,6 @@ namespace Contacts_UI
             {
                 
             }
-
-        }
-
-        private void btnConnection_Click(object sender, RoutedEventArgs e)
-        {
 
         }
     }
