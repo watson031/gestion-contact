@@ -8,13 +8,13 @@
         Title="AfficherContacts" Height="450" Width="800">
     <Grid>
         <TextBlock x:Name="textBlock" FontSize="20" HorizontalAlignment="Left" Margin="298,27,0,0" TextWrapping="Wrap" Text="Liste Des Contacts" VerticalAlignment="Top" Width="165" Height="30" RenderTransformOrigin="0.544,1.234" Foreground="#FF404040"/>
-        <TextBox x:Name="textBoxRecherche" HorizontalAlignment="Left" Height="23" Margin="355,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" TextChanged="textBoxRecherche_TextChanged" BorderThickness="1"/>
+        <TextBox x:Name="textBoxRecherche" HorizontalAlignment="Left" Height="23" Margin="355,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" BorderThickness="1"/>
         <TextBlock x:Name="Rechercher" Foreground="#FF404040" FontSize="16" HorizontalAlignment="Left" Margin="244,95,0,0" TextWrapping="Wrap" Text="Rechercher" VerticalAlignment="Top" Height="23" Width="82"/>
-        <Button x:Name="btnLogout" Background="#FF007EB8"  Content="Se deconnecter" Margin="568,334,0,41" RenderTransformOrigin="-1.374,0.951" HorizontalAlignment="Left" FontSize="12" Width="130"  Foreground="White" BorderBrush="{x:Null}" Click="btnLogout_Click"/>
-        <ListBox x:Name="listContacts" HorizontalAlignment="Left" Height="226" Margin="233,153,0,0" VerticalAlignment="Top" Width="282" SelectionChanged="listContacts_SelectionChanged_1"/>
-        <Button x:Name="btnAjouter" Background="#FF007EB8"  Content="Ajouter" Margin="568,153,0,222" RenderTransformOrigin="-1.374,0.951" HorizontalAlignment="Left" FontSize="12" Width="130"  Foreground="White" BorderBrush="{x:Null}" Click="btnAjouter_Click"/>
-        <Button x:Name="btnModifier" Background="#FF007EB8"  Content="Modifier" Margin="74,153,0,222" RenderTransformOrigin="-1.374,0.951" HorizontalAlignment="Left" FontSize="12" Width="130"  Foreground="White" BorderBrush="{x:Null}" Click="btnModifier_Click"/>
-        <Button x:Name="btnSupprimer" Background="#FF007EB8"  Content="Supprimer" Margin="74,239,0,136" RenderTransformOrigin="-1.374,0.951" HorizontalAlignment="Left" FontSize="12" Width="130"  Foreground="White" BorderBrush="{x:Null}" Click="btnSupprimer_Click"/>
+        <Button x:Name="btnLogout" Background="#FF007EB8"  Content="Se deconnecter" Margin="568,334,0,41" RenderTransformOrigin="-1.374,0.951" HorizontalAlignment="Left" FontSize="12" Width="130"  Foreground="White" BorderBrush="{x:Null}" Click="btnLogout_Click" />
+        <ListBox x:Name="listContacts" HorizontalAlignment="Left" Height="226" Margin="233,153,0,0" VerticalAlignment="Top" Width="282"/>
+        <Button x:Name="btnAjouter" Background="#FF007EB8"  Content="Ajouter" Margin="568,153,0,222" RenderTransformOrigin="-1.374,0.951" HorizontalAlignment="Left" FontSize="12" Width="130"  Foreground="White" BorderBrush="{x:Null}" Click="btnAjouter_Click" />
+        <Button x:Name="btnModifier" Background="#FF007EB8"  Content="Modifier" Margin="74,153,0,222" RenderTransformOrigin="-1.374,0.951" HorizontalAlignment="Left" FontSize="12" Width="130"  Foreground="White" BorderBrush="{x:Null}" Click="btnModifier_Click" />
+        <Button x:Name="btnSupprimer" Background="#FF007EB8"  Content="Supprimer" Margin="74,239,0,136" RenderTransformOrigin="-1.374,0.951" HorizontalAlignment="Left" FontSize="12" Width="130"  Foreground="White" BorderBrush="{x:Null}" Click="btnSupprimer_Click" />
         
     </Grid>
 </Window>

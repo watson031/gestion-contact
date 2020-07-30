@@ -20,10 +20,11 @@
         <Label x:Name="labelNom" Content="PAGE D'INSCRIPTION" HorizontalAlignment="Left" Margin="276,41,0,0" VerticalAlignment="Top" Width="271" Height="40" FontWeight="Bold" FontSize="24"/>
         <Label  FontSize="14" Content="Confirmation du mot passe" HorizontalAlignment="Left" Margin="129,239,0,0" VerticalAlignment="Top" Foreground="#FF404040" Width="189" FontFamily="Source Serif Pro Black"/>
         <PasswordBox Height="29"  Margin="365,239,153.8,0" 
-            x:Name="passwordTxtbox_Copy" VerticalAlignment="Top" 
+            x:Name="passwordTxtbox_Confirm" VerticalAlignment="Top" 
             Background="white" Foreground="DarkBlue" 
             MaxLength="15" PasswordChar="*" BorderThickness="1" 
          />
+        <Label x:Name="lbl_MessageErreur"  HorizontalAlignment="Left" Margin="129,86,0,0" VerticalAlignment="Top" Width="507" Height="40" FontSize="18" FontWeight="Bold"/>
 
 
     </Grid>

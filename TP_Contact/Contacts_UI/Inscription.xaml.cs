@@ -27,6 +27,32 @@ namespace Contacts_UI
 
         private void btnInscrire_Click(object sender, RoutedEventArgs e)
         {
+            if (usernameTxtbox.Text.Trim().Length >= 3 && passwordInscription.Password.Trim().Length >= 3 
+                && passwordTxtbox_Confirm.Password.Trim().Length >= 3)
+            {
+                if (passwordInscription.Password.Trim() == passwordTxtbox_Confirm.Password.Trim())
+                {
+                    BLL.Inscription(usernameTxtbox.Text.Trim(), passwordInscription.Password.Trim());
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    Close();
+
+                }
+                else
+                {
+                    this.lbl_MessageErreur.Content = "Le mot de passe doit être identique";
+                }
+
+
+
+            }
+            else
+            {
+                this.lbl_MessageErreur.Content = "Les champs doit contenir plus que 3 caractères";
+            }
+
+
+
 
         }
 

@@ -10,7 +10,7 @@ namespace Contact_BLL
 {
     public class BLL
     {
-        public static int? idLogin = null;
+        public static int idLogin;
 
 
         public static bool Login(String username, String password)
@@ -23,9 +23,9 @@ namespace Contact_BLL
             ServiceDb.SignUp(username, password);
         }
 
-        public static void AjouterUnContact(String prenom, String nom, String cellulaire, String courriel)
+        public static void AjouterUnContact(String prenom, String nom, String cellulaire, String courriel,int idUtilisateurs)
         {
-            ServiceDb.AjouterUnContact(prenom, nom, cellulaire, courriel);
+            ServiceDb.AjouterUnContact(prenom, nom, cellulaire, courriel, idUtilisateurs);
         }
 
         public static Contacts RechercheParId(int id)
@@ -51,6 +51,12 @@ namespace Contact_BLL
         public static void ModifierUnContact(int id, string prenom, string nom, string cellulaire, string courriel)
         {
             ServiceDb.ModifierUnContact(id, prenom, nom, cellulaire, courriel);
+        }
+
+
+        public static int RechercheParUsername(string username)
+        {
+            return ServiceDb.RechercheParUsername(username);
         }
     }
 }

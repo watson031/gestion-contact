@@ -26,7 +26,9 @@ namespace Contacts_UI
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
-
+            AjouterContacts fenetreAjout = new AjouterContacts();
+            fenetreAjout.Show();
+            this.Close();
         }
 
         private void btnModifier_Click(object sender, RoutedEventArgs e)

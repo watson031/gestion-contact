@@ -34,7 +34,7 @@ namespace Contacts_UI
             {
 
                 string cel = null;
-                string cou = null;
+                string courriel = null;
 
                 if (cellTxtBox.Text.Trim().Length >= 10)
                 {
@@ -42,25 +42,11 @@ namespace Contacts_UI
                 }
                 if (courrielTxtBox.Text.Trim() != "")
                 {
-                    cou = courrielTxtBox.Text.Trim();
+                    courriel = courrielTxtBox.Text.Trim();
                 }
 
-                List<Contacts> listeContacts = BLL.ShowAllContacts();
-                int[] tab = new int[listeContacts.Count];
-                int cpt = 0;
-                foreach (Contacts co in listeContacts)
-                {
-                    tab[cpt] = co.Id;
-                }
 
-                Detail.Id = tab[cpt];
-
-                Contact cWindow = new Contact();
-                cWindow.Show();
-                Close();
-
-
-                BLL.AjouterUnContact(prenomTxtBox.Text.Trim(), nomTxtBox.Text.Trim(), cel, cou);
+                BLL.AjouterUnContact(prenomTxtBox.Text.Trim(), nomTxtBox.Text.Trim(), cel, courriel,BLL.idLogin);
             }
             else
             {
@@ -73,7 +59,9 @@ namespace Contacts_UI
 
         private void btnAnnuler_Click(object sender, RoutedEventArgs e)
         {
-
+            AfficherContacts fenetreCont = new AfficherContacts();
+            fenetreCont.Show();
+            this.Close();
         }
     }
 }

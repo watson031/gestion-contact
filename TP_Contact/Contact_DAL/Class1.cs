@@ -80,10 +80,15 @@ namespace Contact_DAL
             return connection;
         }
 
-        public static void AjouterUnContact(String prenom, String nom, String cellulaire, String courriel)
+        public static void AjouterUnContact(String prenom, String nom, String cellulaire, String courriel,int Id_utilisateurs)
         {
 
             Contacts userContact = new Contacts();
+            userContact.Prenom = prenom;
+            userContact.Nom = nom;
+            userContact.Cellulaire = cellulaire;
+            userContact.Courriel = courriel;
+            userContact.IdUsers = Id_utilisateurs;
 
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -92,14 +97,14 @@ namespace Contact_DAL
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
 
-                    cmd.CommandText = @"insert into Contacts(prenom,nom,telephone,courriel) values (@prenom,@nom,@cellulaire,@courriel)";
+                    cmd.CommandText = @"insert into Contacts(prenom,nom,telephone,courriel,Id_utilisateurs) values (@prenom,@nom,@cellulaire,@courriel,@Id_utilisateurs)";
 
-                    cmd.Parameters.AddWithValue("@prenom", prenom);
-                    cmd.Parameters.AddWithValue("@nom", nom);
+                    cmd.Parameters.AddWithValue("@prenom", userContact.Prenom);
+                    cmd.Parameters.AddWithValue("@nom", userContact.Nom);
 
                     if (userContact.Cellulaire != null)
                     {
-                        cmd.Parameters.AddWithValue("@cellulaire", cellulaire);
+                        cmd.Parameters.AddWithValue("@cellulaire", userContact.Cellulaire);
                     }
                     else
                     {
@@ -109,14 +114,19 @@ namespace Contact_DAL
 
                     if (userContact.Courriel != null)
                     {
-                        cmd.Parameters.AddWithValue("@courriel", courriel);
+                        cmd.Parameters.AddWithValue("@courriel", userContact.Courriel);
                     }
                     else
                     {
                         cmd.Parameters.AddWithValue("@courriel", DBNull.Value);
                     }
 
+                    cmd.Parameters.AddWithValue("@Id_utilisateurs", userContact.IdUsers);
+
+
                     cmd.ExecuteNonQuery();
+
+                    Console.WriteLine("contact ajoute");
                 }
             }
         }
@@ -332,14 +342,7 @@ namespace Contact_DAL
 
                     idUser = (int) idRecherche;
 
-                    /*using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            idLogin.Id = reader.GetInt32(0);
-                            
-                        }
-                    }*/
+                    
                 }
             }
             return idUser;

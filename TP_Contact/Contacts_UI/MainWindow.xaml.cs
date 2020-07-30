@@ -43,14 +43,17 @@ namespace Contacts_UI
 
             if (BLL.Login(this.usernameTxtbox.Text, this.passwordTxtbox.Password))
             {
+                AfficherContacts fenetreCont = new AfficherContacts();
+                fenetreCont.Show();
+                this.Close();
 
 
-
-               // BLL.idLogin;
+                
+                BLL.idLogin = BLL.RechercheParUsername(this.usernameTxtbox.Text);
             }
             else
             {
-                
+                this.labelErreurConn.Content = "Erreur mauvais nom d'utilisateur ou mot de passe";
             }
 
         }

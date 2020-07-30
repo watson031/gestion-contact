@@ -32,8 +32,19 @@ namespace SolutionTest
 
             ServiceContacts.SignUp(util.Username, util.Password);*/
 
-            /*Console.WriteLine(ServiceDb.RechercheParUsername("waugusti"));
+            /*Console.WriteLine(ServiceDb.RechercheParUsername("giselita"));
             Thread.Sleep(100);*/
+
+            Contacts contacts = new Contacts();
+            contacts.Cellulaire = "(514)111-1111";
+            contacts.Courriel = "wat@gmailcom";
+
+            
+            contacts.IdUsers = 108;
+            contacts.Nom = "augustin";
+            contacts.Prenom = "watson";
+
+            ServiceDb.AjouterUnContact(contacts.Prenom, contacts.Nom, contacts.Cellulaire,contacts.Courriel, contacts.IdUsers);
 
         }
     }
