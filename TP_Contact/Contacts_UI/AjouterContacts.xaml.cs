@@ -1,4 +1,5 @@
 ﻿using Contact_BLL;
+using Contact_Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace Contacts_UI
     /// </summary>
     public partial class AjouterContacts : Window
     {
+        
         public AjouterContacts()
         {
             InitializeComponent();
@@ -42,8 +44,8 @@ namespace Contacts_UI
                 {
                     cou = courrielTxtBox.Text.Trim();
                 }
-                BLL.(prenomSaisie.Text.Trim(), nomSaisie.Text.Trim(), dom, cel, cou);
-                List<Contacts> listeContacts = ContactsManager.GetAllById();
+
+                List<Contacts> listeContacts = BLL.ShowAllContacts();
                 int[] tab = new int[listeContacts.Count];
                 int cpt = 0;
                 foreach (Contacts co in listeContacts)
@@ -58,6 +60,7 @@ namespace Contacts_UI
                 Close();
 
 
+                BLL.AjouterUnContact(prenomTxtBox.Text.Trim(), nomTxtBox.Text.Trim(), cel, cou);
             }
             else
             {

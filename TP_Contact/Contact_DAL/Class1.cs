@@ -314,6 +314,38 @@ namespace Contact_DAL
         }
 
 
+        public static int RechercheParUsername(string username)
+        {
+            int idUser;
+           // Login idLogin = new Login();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"select id
+                        from Utilisateurs where username = @username";
+                    cmd.Parameters.Add(new SqlParameter("username", username));
+
+                    object idRecherche = cmd.ExecuteScalar();
+
+                    idUser = (int) idRecherche;
+
+                    /*using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            idLogin.Id = reader.GetInt32(0);
+                            
+                        }
+                    }*/
+                }
+            }
+            return idUser;
+        }
+
+
 
     }
 

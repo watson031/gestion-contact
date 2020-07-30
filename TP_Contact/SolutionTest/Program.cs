@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Contact_DAL;
 using Contact_Model;
@@ -31,8 +32,8 @@ namespace SolutionTest
 
             ServiceContacts.SignUp(util.Username, util.Password);*/
 
-
-
+            /*Console.WriteLine(ServiceDb.RechercheParUsername("waugusti"));
+            Thread.Sleep(100);*/
 
         }
     }

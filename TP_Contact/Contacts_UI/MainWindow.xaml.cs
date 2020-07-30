@@ -23,6 +23,8 @@ namespace Contacts_UI
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -41,7 +43,10 @@ namespace Contacts_UI
 
             if (BLL.Login(this.usernameTxtbox.Text, this.passwordTxtbox.Password))
             {
-                
+
+
+
+               // BLL.idLogin;
             }
             else
             {

@@ -10,6 +10,9 @@ namespace Contact_BLL
 {
     public class BLL
     {
+        public static int? idLogin = null;
+
+
         public static bool Login(String username, String password)
         {
             return ServiceDb.Login(username, password);
