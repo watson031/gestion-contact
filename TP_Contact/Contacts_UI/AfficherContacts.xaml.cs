@@ -35,12 +35,12 @@ namespace Contacts_UI
 
         private void btnModifier_Click(object sender, RoutedEventArgs e)
         {
-
+            //***********
         }
 
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)
         {
-
+            //***********
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
