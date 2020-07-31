@@ -15,6 +15,14 @@ namespace Contact_Model
         public string Cellulaire { get; set; }
         public string Courriel { get; set; }
 
+
+
+        public override string ToString()
+        {
+            return "Nom : " + this.Prenom + " " + this.Nom + "\n" + "Cellulaire : " + this.Cellulaire + "\n" + "Courriel : " + this.Courriel;
+            //this.Prenom + " " + this.Nom + " " + this.Cellulaire + " " + this.Courriel;
+        }
+
     }
     
     public class Login

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Contact_Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Contact_BLL;
 
 namespace Contacts_UI
 {
@@ -43,6 +45,30 @@ namespace Contacts_UI
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow mainWindow = new MainWindow();
+            this.Close();
+            mainWindow.Show();
+        }
+
+        private void btnAffichage_Click(object sender, RoutedEventArgs e)
+        {
+            List<Contacts> list = new List<Contacts>();
+            list = BLL.ShowAllContactsByUserId(BLL.idLogin);
+
+            if (list.Count > 0)
+            {
+                foreach (Contacts contacts in list)
+                {
+                    this.listBxContacts.Items.Add(contacts);
+                }
+
+            }
+            else
+            {
+                this.listBxContacts.Items.Add("Vous n'avez de Contacts");
+            }
+
+
 
         }
     }

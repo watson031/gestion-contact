@@ -47,13 +47,17 @@ namespace Contacts_UI
 
 
                 BLL.AjouterUnContact(prenomTxtBox.Text.Trim(), nomTxtBox.Text.Trim(), cel, courriel,BLL.idLogin);
+                this.prenomTxtBox.Text = "";
+                this.nomTxtBox.Text = "";
+                this.cellTxtBox.Text = "";
+                this.courrielTxtBox.Text = "";
+                
             }
             else
             {
                 labelErreurMessage.Content = "Le prenom/nom doit comporter au moins 3 caracteres.";
                 //labelErreurMessage.Foreground = Brushes.Red;
             }
-
 
         }
 

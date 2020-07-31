@@ -58,5 +58,12 @@ namespace Contact_BLL
         {
             return ServiceDb.RechercheParUsername(username);
         }
+
+        public static List<Contacts> ShowAllContactsByUserId(int idUser)
+        {
+            return ServiceDb.ShowAllContactsByUserId(idUser);
+        }
+
+
     }
 }

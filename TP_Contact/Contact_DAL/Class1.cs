@@ -249,7 +249,7 @@ namespace Contact_DAL
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = @"select id, prenom, nom, cellulaire, courriel
+                    cmd.CommandText = @"select id, prenom, nom,telephone, courriel
                         from Contacts where prenom like @prenom + '%' OR nom like @prenom + '%' order by nom asc";
                     cmd.Parameters.Add(new SqlParameter("prenom", prenom));
 
@@ -327,7 +327,7 @@ namespace Contact_DAL
         public static int RechercheParUsername(string username)
         {
             int idUser;
-           // Login idLogin = new Login();
+           
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -346,6 +346,54 @@ namespace Contact_DAL
                 }
             }
             return idUser;
+        }
+
+
+
+        public static List<Contacts> ShowAllContactsByUserId(int Id_utilisateurs)
+        {
+
+            List<Contacts> contacts = new List<Contacts>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"select id, prenom, nom, telephone, courriel
+                        from Contacts where Id_utilisateurs = @Id_utilisateurs order by nom asc";
+                    cmd.Parameters.Add(new SqlParameter("@Id_utilisateurs", Id_utilisateurs));
+                    
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Contacts userContacts = new Contacts();
+                            userContacts.Id = reader.GetInt32(0);
+                            userContacts.Prenom = reader.GetString(1);
+                            userContacts.Nom = reader.GetString(2);
+
+                            if (reader.GetValue(3) != DBNull.Value)
+                            {
+                                userContacts.Cellulaire = reader.GetString(3);
+                            }
+                            else
+                            {
+                                userContacts.Cellulaire = null;
+                            }
+                            if (reader.GetValue(4) != DBNull.Value)
+                            {
+                                userContacts.Courriel = reader.GetString(4);
+                            }
+                            else
+                            {
+                                userContacts.Courriel = null;
+                            }
+                            contacts.Add(userContacts);
+                        }
+                    }
+                }
+            }
+            return contacts;
         }
 
 
