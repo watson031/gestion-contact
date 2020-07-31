@@ -1,11 +1,11 @@
-﻿<Window x:Class="Contacts_UI.AjouterContacts"
+﻿<Window x:Class="Contacts_UI.ModifierContacts"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Contacts_UI"
         mc:Ignorable="d"
-        Title="AjouterContacts" Height="450" Width="800">
+        Title="ModifierContacts" Height="450" Width="800">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="TPContact.jpg" Stretch="UniformToFill"/>
@@ -15,13 +15,13 @@
         <TextBox x:Name="nomTxtBox" HorizontalAlignment="Left" Height="23" Margin="383,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.496,0.62" BorderThickness="1"/>
         <TextBox x:Name="cellTxtBox" HorizontalAlignment="Left" Height="23" Margin="383,172,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" BorderThickness="1"/>
         <TextBox x:Name="courrielTxtBox" HorizontalAlignment="Left" Height="23" Margin="383,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" BorderThickness="1"/>
-        <Button x:Name="btnAjouter" Content="Ajouter" HorizontalAlignment="Left" Margin="202,329,0,0" VerticalAlignment="Top" Width="146" Height="33"  Background="#FF007EB8" Foreground="White" BorderBrush="{x:Null}" Click="btnAjouter_Click"/>
+        <Button x:Name="btnModifier" Content="Modifier" HorizontalAlignment="Left" Margin="202,329,0,0" VerticalAlignment="Top" Width="146" Height="33"  Background="#FF007EB8" Foreground="White" BorderBrush="{x:Null}" Click="btnModifier_Click" />
         <Button x:Name="btnAnnuler" Content="Annuler" HorizontalAlignment="Left" Margin="469,329,0,0" VerticalAlignment="Top" Width="146" Height="33"  Background="#FF007EB8" Foreground="White" BorderBrush="{x:Null}" Click="btnAnnuler_Click"/>
         <TextBlock x:Name="txtBlck_Prenom" FontSize="16" HorizontalAlignment="Left" Margin="286,72,0,0" TextWrapping="Wrap" Text="Prenom" VerticalAlignment="Top" Foreground="#FF404040" RenderTransformOrigin="3.226,0.147"/>
         <TextBlock x:Name="txtBlck_Nom" FontSize="16" HorizontalAlignment="Left" Margin="309,122,0,0" TextWrapping="Wrap" Text="Nom" VerticalAlignment="Top" Foreground="#FF404040"/>
         <TextBlock x:Name="txtBlck_Cell" FontSize="16" HorizontalAlignment="Left" Margin="276,174,0,0" TextWrapping="Wrap" Text="Cellulaire" VerticalAlignment="Top" Foreground="#FF404040" RenderTransformOrigin="0.334,0.592"/>
         <TextBlock x:Name="txtBlck_Email" FontSize="16" HorizontalAlignment="Left" Margin="286,237,0,0" TextWrapping="Wrap" Text="Courriel" VerticalAlignment="Top" Foreground="#FF404040"/>
         <Label x:Name="labelErreurMessage" Content="" HorizontalAlignment="Left" Margin="69,297,0,0" VerticalAlignment="Top" Foreground="#FF007EB8"/>
-        <TextBlock x:Name="AjouterUnContact" FontSize="20" HorizontalAlignment="Left" Margin="318,21,0,0" TextWrapping="Wrap" Text="Ajoutez un contact" VerticalAlignment="Top" Foreground="#FF404040"/>
+        <TextBlock x:Name="ModifierUnContact" FontSize="20" HorizontalAlignment="Left" Margin="318,21,0,0" TextWrapping="Wrap" Text="Modifier un contact" VerticalAlignment="Top" Foreground="#FF404040"/>
     </Grid>
 </Window>

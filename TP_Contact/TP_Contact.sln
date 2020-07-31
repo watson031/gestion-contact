@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contact_Model", "Contact_Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts_UI", "Contacts_UI\Contacts_UI.csproj", "{EB75B09F-DA3F-4C00-9355-A4C31A1B6133}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionTest", "SolutionTest\SolutionTest.csproj", "{119D57CD-BF36-4D5C-BCF8-D608C422CDFC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{EB75B09F-DA3F-4C00-9355-A4C31A1B6133}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB75B09F-DA3F-4C00-9355-A4C31A1B6133}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB75B09F-DA3F-4C00-9355-A4C31A1B6133}.Release|Any CPU.Build.0 = Release|Any CPU
-		{119D57CD-BF36-4D5C-BCF8-D608C422CDFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{119D57CD-BF36-4D5C-BCF8-D608C422CDFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{119D57CD-BF36-4D5C-BCF8-D608C422CDFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{119D57CD-BF36-4D5C-BCF8-D608C422CDFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

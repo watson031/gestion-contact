@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:Contacts_UI"
         mc:Ignorable="d"
         Title="Inscription" Height="450" Width="800">
-    <Grid Margin="10,0,-6.2,0">
+    <Grid 
+        Margin="0,0,-6.4,0">
+        <Grid.Background>
+            <ImageBrush ImageSource="TPContact.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
         <Label  Content="Nom d'utilisateur" HorizontalAlignment="Left" Margin="185,147,0,0" VerticalAlignment="Top" Foreground="#FF404040" RenderTransformOrigin="1.225,2.218" Height="29" Width="133" FontFamily="Source Serif Pro Black" FontSize="14"/>
         <Label  FontSize="14" Content="Mot de passe" HorizontalAlignment="Left" Margin="212,195,0,0" VerticalAlignment="Top" Foreground="#FF404040" Width="106" FontFamily="Source Serif Pro Black"/>
         <TextBox x:Name="usernameTxtbox"  HorizontalAlignment="Left" Height="29" Margin="365,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271" BorderThickness="1" Background="White" RenderTransformOrigin="0.5,-0.162"/>
@@ -24,7 +28,7 @@
             Background="white" Foreground="DarkBlue" 
             MaxLength="15" PasswordChar="*" BorderThickness="1" 
          />
-        <Label x:Name="lbl_MessageErreur"  HorizontalAlignment="Left" Margin="129,86,0,0" VerticalAlignment="Top" Width="507" Height="40" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="lbl_MessageErreur"  HorizontalAlignment="Left" Margin="129,86,0,0" VerticalAlignment="Top" Width="507" Height="40" FontSize="18" FontWeight="Bold" Foreground="#FFC72525"/>
 
 
     </Grid>

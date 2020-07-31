@@ -240,7 +240,7 @@ namespace Contact_DAL
         }
 
 
-        public static List<Contacts> RechercheParPrenom(string prenom)
+        public static List<Contacts> RechercheParPrenom(string prenom, int Id_utilisateurs)
         {
 
             List<Contacts> contacts = new List<Contacts>();
@@ -249,9 +249,12 @@ namespace Contact_DAL
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = @"select id, prenom, nom,telephone, courriel
-                        from Contacts where prenom like @prenom + '%' OR nom like @prenom + '%' order by nom asc";
+                    cmd.CommandText = @"select Contacts.Id_utilisateurs, prenom, nom,telephone, courriel
+                        from Contacts
+                        Inner Join Utilisateurs On Contacts.Id_utilisateurs = Utilisateurs.Id
+                        where (prenom like @prenom + '%' Or nom like '%' + @prenom + '%') And Id_utilisateurs = @Id_utilisateurs order by nom asc";
                     cmd.Parameters.Add(new SqlParameter("prenom", prenom));
+                    cmd.Parameters.Add(new SqlParameter("@Id_utilisateurs", Id_utilisateurs));
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -262,17 +265,17 @@ namespace Contact_DAL
                             userContacts.Prenom = reader.GetString(1);
                             userContacts.Nom = reader.GetString(2);
                             
-                            if (reader.GetValue(4) != DBNull.Value)
+                            if (reader.GetValue(3) != DBNull.Value)
                             {
-                                userContacts.Cellulaire = reader.GetString(4);
+                                userContacts.Cellulaire = reader.GetString(3);
                             }
                             else
                             {
                                 userContacts.Cellulaire = null;
                             }
-                            if (reader.GetValue(5) != DBNull.Value)
+                            if (reader.GetValue(4) != DBNull.Value)
                             {
-                                userContacts.Courriel = reader.GetString(5);
+                                userContacts.Courriel = reader.GetString(4);
                             }
                             else
                             {
@@ -295,7 +298,7 @@ namespace Contact_DAL
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = @"update Contacts Set prenom = @prenom, nom = @nom, cellulaire = @cellulaire, courriel = @courriel where id = @id";
+                    cmd.CommandText = @"update Contacts Set prenom = @prenom, nom = @nom, telephone = @cellulaire, courriel = @courriel where id = @id";
                     cmd.Parameters.AddWithValue("@id", id);
                     cmd.Parameters.AddWithValue("@prenom", prenom);
                     cmd.Parameters.AddWithValue("@nom", nom);
