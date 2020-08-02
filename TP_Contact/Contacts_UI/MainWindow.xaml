@@ -22,7 +22,7 @@
          />
         <Button x:Name="btnConnection" BorderBrush="{x:Null}"  Content="Connexion" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Margin="490,267,0,0" Background="#FF007EB8" BorderThickness="0" Foreground="White" Height="33" FontSize="12" Click="btnConnection_Click"/>
         <Button x:Name="btnInscription" Content="Inscription" HorizontalAlignment="Left" Margin="490,110,0,0" VerticalAlignment="Top" Width="146" Background="#FF007EB8" BorderBrush="{x:Null}" Foreground="White" Height="33" FontSize="12" Click="btnInscription_Click"/>
-        <TextBlock x:Name="labelMessage" Text=" CONNECTEZ-VOUS POUR VOIR VOTRE CONTACT" HorizontalAlignment="Left" Margin="212,39,0,0" VerticalAlignment="Top" Width="379" Height="40" FontSize="16" FontWeight="Bold" Background="#FF054251" Foreground="#FFFAF3F3"/>
+        <TextBlock x:Name="labelMessage" Text=" CONNECTEZ-VOUS POUR VOIR VOS CONTACTS" HorizontalAlignment="Left" Margin="212,39,0,0" VerticalAlignment="Top" Width="379" Height="40" FontSize="16" FontWeight="Bold" Background="#FF054251" Foreground="#FFFAF3F3"/>
         <Label x:Name="labelErreurConn"  HorizontalAlignment="Left" Margin="185,330,0,0" VerticalAlignment="Top" Width="451" Height="33" Foreground="#FFEB1717"/>
         
 

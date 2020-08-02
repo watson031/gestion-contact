@@ -27,6 +27,7 @@ namespace Contacts_UI
         {
             InitializeComponent();
             this.contact = new Contacts();
+            //this.listBxContacts.Items.Add("Appuyez sur \"Afficher vos contacts\" pour les\n afficher");
         }
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
@@ -151,24 +152,34 @@ namespace Contacts_UI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.LblAucunChoix.Content = "";
-            this.listBxContacts.Items.Clear();
-            List<Contacts> list = new List<Contacts>();
-            list = BLL.RechercheParPrenom(this.textBoxRecherche.Text.Trim(), BLL.idLogin);
-
-            if (list.Count > 0)
+            if (this.textBoxRecherche.Text.Trim().Length != 0)
             {
-                foreach (Contacts contacts in list)
-                {
-                    this.listBxContacts.Items.Add(contacts);
-                }
 
+                this.LblAucunChoix.Content = "";
+                this.listBxContacts.Items.Clear();
+                List<Contacts> list = new List<Contacts>();
+                list = BLL.RechercheParPrenom(this.textBoxRecherche.Text.Trim(), BLL.idLogin);
+
+                if (list.Count > 0)
+                {
+                    foreach (Contacts contacts in list)
+                    {
+                        this.listBxContacts.Items.Add(contacts);
+                    }
+
+                }
+                else
+                {
+                    this.LblAucunChoix.Content ="Aucun Contact trouvé pour le nom entré";
+                }
+                // BLL.RechercheParPrenom(this.textBoxRecherche.Text.Trim());
             }
+
             else
             {
-                this.listBxContacts.Items.Add("Aucun Contact trouvé pour le nom entré");
+                this.LblAucunChoix.Content = "Saisir un nom à rechercher";
             }
-            // BLL.RechercheParPrenom(this.textBoxRecherche.Text.Trim());
+
         }
     }
 }

@@ -52,8 +52,6 @@ namespace Contacts_UI
             }
 
 
-
-
         }
 
         private void btnAnnuler_Click(object sender, RoutedEventArgs e)

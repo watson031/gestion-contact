@@ -1,6 +1,7 @@
 ﻿using Contact_Model;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Contact_DAL
 {
     public class ServiceDb
     {
-        static readonly string connectionString = @"Data Source=8Z0QFT2\SQLEXPRESS;Initial Catalog=dbContact;Integrated Security=True;Connect Timeout=5";
+        static readonly string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
 
 
         public static void SignUp(String username, String password)
@@ -195,51 +196,6 @@ namespace Contact_DAL
         }
 
 
-        public static List<Contacts> ShowAllContacts()
-        {
-
-            List<Contacts> contacts = new List<Contacts>();
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                using (SqlCommand cmd = conn.CreateCommand())
-                {
-                    cmd.CommandText = @"select * from Contacts order by nom asc";
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            Contacts userContacts = new Contacts();
-                            userContacts.Id = reader.GetInt32(0);
-                            userContacts.Prenom = reader.GetString(1);
-                            userContacts.Nom = reader.GetString(2);
-                            
-                            if (reader.GetValue(4) != DBNull.Value)
-                            {
-                                userContacts.Cellulaire = reader.GetString(4);
-                            }
-                            else
-                            {
-                                userContacts.Cellulaire = null;
-                            }
-                            if (reader.GetValue(5) != DBNull.Value)
-                            {
-                                userContacts.Courriel = reader.GetString(5);
-                            }
-                            else
-                            {
-                                userContacts.Courriel = null;
-                            }
-                            contacts.Add(userContacts);
-                        }
-                    }
-                }
-            }
-            return contacts;
-        }
-
-
         public static List<Contacts> RechercheParPrenom(string prenom, int Id_utilisateurs)
         {
 
@@ -402,18 +358,6 @@ namespace Contact_DAL
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

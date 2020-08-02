@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,10 +22,13 @@ namespace Contacts_UI
     /// </summary>
     public partial class AjouterContacts : Window
     {
+      
         
         public AjouterContacts()
         {
             InitializeComponent();
+            this.cellTxtBox.Text = "Ex : (514)111-1111";
+           
         }
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
@@ -36,11 +40,13 @@ namespace Contacts_UI
                 string cel = null;
                 string courriel = null;
 
-                if (cellTxtBox.Text.Trim().Length >= 10)
+
+                if (cellTxtBox.Text.Trim().Length >= 10 && Regex.Match(cellTxtBox.Text.Trim(), @"^\(\d{3}\)\d{3}-\d{4}$").Success)
                 {
                     cel = cellTxtBox.Text.Trim();
                 }
-                if (courrielTxtBox.Text.Trim() != "")
+
+                if (courrielTxtBox.Text.Trim().Length >= 10 && courrielTxtBox.Text.Trim().Contains("@"))
                 {
                     courriel = courrielTxtBox.Text.Trim();
                 }

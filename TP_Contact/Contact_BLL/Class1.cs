@@ -28,7 +28,7 @@ namespace Contact_BLL
             ServiceDb.AjouterUnContact(prenom, nom, cellulaire, courriel, idUtilisateurs);
         }
 
-        public static Contacts RechercheParId(int id)//****************************************
+        public static Contacts RechercheParId(int id)
         {
             return ServiceDb.RechercheParId(id);
         }
@@ -36,11 +36,6 @@ namespace Contact_BLL
         public static void SupprimerUnContact(int id)
         {
             ServiceDb.SupprimerUnContact(id);
-        }
-
-        public static List<Contacts> ShowAllContacts()//*****************************************
-        {
-            return ServiceDb.ShowAllContacts();
         }
 
         public static List<Contacts> RechercheParPrenom(string prenom, int Id_utilisateurs)
