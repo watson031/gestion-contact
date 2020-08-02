@@ -22,13 +22,14 @@ namespace Contacts_UI
     /// </summary>
     public partial class AjouterContacts : Window
     {
-      
-        
+
+
         public AjouterContacts()
         {
             InitializeComponent();
             this.cellTxtBox.Text = "Ex : (514)111-1111";
-           
+            this.courrielTxtBox.Text ="Ex:ab@exemple.com";
+
         }
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
@@ -52,12 +53,12 @@ namespace Contacts_UI
                 }
 
 
-                BLL.AjouterUnContact(prenomTxtBox.Text.Trim(), nomTxtBox.Text.Trim(), cel, courriel,BLL.idLogin);
+                BLL.AjouterUnContact(prenomTxtBox.Text.Trim(), nomTxtBox.Text.Trim(), cel, courriel, BLL.idLogin);
                 this.prenomTxtBox.Text = "";
                 this.nomTxtBox.Text = "";
                 this.cellTxtBox.Text = "";
                 this.courrielTxtBox.Text = "";
-                
+
             }
             else
             {

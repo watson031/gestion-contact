@@ -23,7 +23,7 @@ namespace Contact_BLL
             ServiceDb.SignUp(username, password);
         }
 
-        public static void AjouterUnContact(String prenom, String nom, String cellulaire, String courriel,int idUtilisateurs)
+        public static void AjouterUnContact(String prenom, String nom, String cellulaire, String courriel, int idUtilisateurs)
         {
             ServiceDb.AjouterUnContact(prenom, nom, cellulaire, courriel, idUtilisateurs);
         }

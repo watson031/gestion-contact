@@ -20,7 +20,7 @@
         <Button x:Name="btnSupprimer" Background="#FF007EB8"  Content="Selectionner &#xa; un Contact &#xa;à Supprimer" Margin="74,239,0,125" RenderTransformOrigin="-1.374,0.951" HorizontalAlignment="Left" FontSize="12" Width="130"  Foreground="White" BorderBrush="{x:Null}" Click="btnSupprimer_Click" />
         <Button x:Name="btnAffichage" Background="#FF007EB8"  Content="Afficher vos  &#xa;  Contacts" Margin="568,239,0,136" RenderTransformOrigin="-1.374,0.951" HorizontalAlignment="Left" FontSize="12" Width="130"  Foreground="White" BorderBrush="{x:Null}" Click="btnAffichage_Click" />
         <Button Content="Entrer" Background="#FF007EB8" HorizontalAlignment="Left" Margin="534,95,0,0" VerticalAlignment="Top" Width="94" Height="23" Click="Button_Click"/>
-        <Label x:Name="LblAucunChoix"  HorizontalAlignment="Left" Margin="74,62,0,0" VerticalAlignment="Top" Width="441" Height="28" Foreground="#FFEB1919" FontSize="16"/>
+        <Label x:Name="LblAucunChoix"  HorizontalAlignment="Left" Margin="74,57,0,0" VerticalAlignment="Top" Width="441" Height="33" Foreground="#FFEB1919" FontSize="16"/>
 
     </Grid>
 </Window>

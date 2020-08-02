@@ -43,8 +43,6 @@ namespace Contacts_UI
                     this.lbl_MessageErreur.Content = "Le mot de passe doit être identique";
                 }
 
-
-
             }
             else
             {

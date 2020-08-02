@@ -111,14 +111,14 @@ namespace Contacts_UI
                     this.LblAucunChoix.Content = "";
 
                 }
-                
+
             }
             else
             {
                 this.LblAucunChoix.Content = "Selectionnez un contact avant de supprimer";
             }
 
-           
+
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
@@ -145,7 +145,7 @@ namespace Contacts_UI
             }
             else
             {
-                this.listBxContacts.Items.Add("Vous n'avez pas de Contacts");
+                this.LblAucunChoix.Content ="Vous n'avez pas de Contacts";
             }
 
         }
@@ -170,9 +170,9 @@ namespace Contacts_UI
                 }
                 else
                 {
-                    this.LblAucunChoix.Content ="Aucun Contact trouvé pour le nom entré";
+                    this.LblAucunChoix.Content = "Aucun Contact trouvé pour le nom entré";
                 }
-                // BLL.RechercheParPrenom(this.textBoxRecherche.Text.Trim());
+               
             }
 
             else

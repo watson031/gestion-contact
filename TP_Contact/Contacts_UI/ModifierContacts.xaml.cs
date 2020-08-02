@@ -51,7 +51,7 @@ namespace Contacts_UI
                 courriel = courrielTxtBox.Text.Trim();
             }
 
-            BLL.ModifierUnContact(AfficherContacts.idAModifier, this.prenomTxtBox.Text, this.nomTxtBox.Text, cel,courriel);
+            BLL.ModifierUnContact(AfficherContacts.idAModifier, this.prenomTxtBox.Text, this.nomTxtBox.Text, cel, courriel);
 
             this.prenomTxtBox.Text = "";
             this.nomTxtBox.Text = "";
@@ -66,7 +66,7 @@ namespace Contacts_UI
             AfficherContacts afficher = new AfficherContacts();
             afficher.Show();
             this.Close();
-            
+
         }
     }
 }

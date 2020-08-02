@@ -47,8 +47,6 @@ namespace Contacts_UI
                 fenetreCont.Show();
                 this.Close();
 
-
-                
                 BLL.idLogin = BLL.RechercheParUsername(this.usernameTxtbox.Text);
             }
             else

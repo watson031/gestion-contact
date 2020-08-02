@@ -81,7 +81,7 @@ namespace Contact_DAL
             return connection;
         }
 
-        public static void AjouterUnContact(String prenom, String nom, String cellulaire, String courriel,int Id_utilisateurs)
+        public static void AjouterUnContact(String prenom, String nom, String cellulaire, String courriel, int Id_utilisateurs)
         {
 
             Contacts userContact = new Contacts();
@@ -136,7 +136,7 @@ namespace Contact_DAL
         {
 
             Contacts userContact = new Contacts();
-            
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
@@ -153,7 +153,7 @@ namespace Contact_DAL
                             userContact.Id = reader.GetInt32(0);
                             userContact.Prenom = reader.GetString(1);
                             userContact.Nom = reader.GetString(2);
-                           
+
                             if (reader.GetValue(4) != DBNull.Value)
                             {
                                 userContact.Cellulaire = reader.GetString(4);
@@ -170,7 +170,7 @@ namespace Contact_DAL
                             {
                                 userContact.Courriel = null;
                             }
-                           
+
 
                         }
                     }
@@ -208,7 +208,7 @@ namespace Contact_DAL
                     cmd.CommandText = @"select Contacts.Id_utilisateurs, prenom, nom,telephone, courriel
                         from Contacts
                         Inner Join Utilisateurs On Contacts.Id_utilisateurs = Utilisateurs.Id
-                        where (prenom like @prenom + '%' Or nom like '%' + @prenom + '%') And Id_utilisateurs = @Id_utilisateurs order by nom asc";
+                        where (prenom like @prenom + '%' Or nom like @prenom + '%') And Id_utilisateurs = @Id_utilisateurs order by nom asc";
                     cmd.Parameters.Add(new SqlParameter("prenom", prenom));
                     cmd.Parameters.Add(new SqlParameter("@Id_utilisateurs", Id_utilisateurs));
 
@@ -220,7 +220,7 @@ namespace Contact_DAL
                             userContacts.Id = reader.GetInt32(0);
                             userContacts.Prenom = reader.GetString(1);
                             userContacts.Nom = reader.GetString(2);
-                            
+
                             if (reader.GetValue(3) != DBNull.Value)
                             {
                                 userContacts.Cellulaire = reader.GetString(3);
@@ -286,7 +286,7 @@ namespace Contact_DAL
         public static int RechercheParUsername(string username)
         {
             int idUser;
-           
+
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -299,9 +299,9 @@ namespace Contact_DAL
 
                     object idRecherche = cmd.ExecuteScalar();
 
-                    idUser = (int) idRecherche;
+                    idUser = (int)idRecherche;
 
-                    
+
                 }
             }
             return idUser;
@@ -321,7 +321,7 @@ namespace Contact_DAL
                     cmd.CommandText = @"select id, prenom, nom, telephone, courriel
                         from Contacts where Id_utilisateurs = @Id_utilisateurs order by nom asc";
                     cmd.Parameters.Add(new SqlParameter("@Id_utilisateurs", Id_utilisateurs));
-                    
+
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
